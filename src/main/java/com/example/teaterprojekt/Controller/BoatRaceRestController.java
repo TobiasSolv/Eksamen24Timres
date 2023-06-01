@@ -16,23 +16,23 @@ public class BoatRaceRestController {
     @Autowired
     BoatRaceService boatraceService;
 
-    @GetMapping("/products")
+    @GetMapping("/boatRace")
     public List<BoatRace> getAllBoatRace() {
         return boatraceService.getAllBoatRace();
     }
 
-    @PostMapping("/product")
+    @PostMapping("/boatRace")
     public ResponseEntity<BoatRace> createBoatRace(@RequestBody BoatRace boatRace) {
         BoatRace newBoatRace = boatraceService.createBoatRace(boatRace);
         return new ResponseEntity<>(newBoatRace, HttpStatus.CREATED);
     }
 
-    @PutMapping("/product/{id}")
+    @PutMapping("/boatRace/{id}")
     public ResponseEntity<BoatRace> updateBoatRace(@PathVariable("id") Integer id, @RequestBody BoatRace boatRace) {
         return new ResponseEntity<>(boatraceService.updateBoatRace(id, boatRace), HttpStatus.OK);
     }
 
-    @DeleteMapping("/product/{id}")
+    @DeleteMapping("/boatRace/{id}")
     public ResponseEntity<BoatRace> deleteBoatRace(@PathVariable("id") Integer id) {
         boatraceService.deleteBoatRace(id);
         return new ResponseEntity<>(HttpStatus.OK);

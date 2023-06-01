@@ -17,23 +17,23 @@ public class BoatRestController {
     @Autowired
     BoatService boatService;
 
-    @GetMapping("/products")
+    @GetMapping("/boats")
     public List<Boat> getAllBoat() {
         return boatService.getAllBoat();
     }
 
-    @PostMapping("/product")
+    @PostMapping("/boat")
     public ResponseEntity<Boat> createBoat(@RequestBody Boat boat) {
         Boat newBoat = boatService.createBoat(boat);
         return new ResponseEntity<>(newBoat, HttpStatus.CREATED);
     }
 
-    @PutMapping("/product/{id}")
+    @PutMapping("/boat/{id}")
     public ResponseEntity<Boat> updateBoat(@PathVariable("id") Integer id, @RequestBody Boat boat) {
         return new ResponseEntity<>(boatService.updateBoat(id, boat), HttpStatus.OK);
     }
 
-    @DeleteMapping("/product/{id}")
+    @DeleteMapping("/boat/{id}")
     public ResponseEntity<Boat> deleteBoat(@PathVariable("id") Integer id) {
         boatService.deleteBoat(id);
         return new ResponseEntity<>(HttpStatus.OK);
