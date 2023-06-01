@@ -12,7 +12,7 @@ public class BoatService {
 
     @Autowired
     BoatRepository boatRepository;
-    public List<Boat> getAllProducts() {
+    public List<Boat> getAllBoat() {
         return boatRepository.findAll();
     }
 

@@ -13,7 +13,7 @@ public class BoatRaceService {
 
     @Autowired
     BoatRaceRepository boatRaceRepository;
-    public List<BoatRace> getAllProducts() {
+    public List<BoatRace> getAllBoatRace() {
         return boatRaceRepository.findAll();
     }
 
@@ -29,7 +29,7 @@ public class BoatRaceService {
         return boatRaceRepository.save(boatRace);
     }
 
-    public void deleteBoat(Integer id) {
+    public void deleteBoatRace(Integer id) {
 
         boatRaceRepository.deleteById(id);
     }

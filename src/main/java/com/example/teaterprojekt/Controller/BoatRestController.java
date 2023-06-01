@@ -18,8 +18,8 @@ public class BoatRestController {
     BoatService boatService;
 
     @GetMapping("/products")
-    public List<Boat> getAllProduct() {
-        return boatService.getAllProducts();
+    public List<Boat> getAllBoat() {
+        return boatService.getAllBoat();
     }
 
     @PostMapping("/product")
